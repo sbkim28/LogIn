@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<% include ../public/html/header.html %>
+<script src='/js/sign_up_form.js'></script>
+<style>
+.article{
+ width:425px;
+ position:fixed;
+ left:50%;
+ margin-left:-15em;
+}
+</style>
+</head>
+<body class='w3-light-gray w3-padding-16'>
+ <article class='article w3-padding-8'>
+  <h2 class='w3-text-black w3-center'>Sign up</h2>
+  <form>
+  <section class='w3-white w3-round w3-border w3-container'>
+   <section class='input'>
+    <label><b>Email:</b></label>
+    <input type='text'id='strEmail'name='strEmail'>
+    <p><b class='error-Email w3-text-red'></b></p>
+    <p><b class='success-Email w3-text-green'></b></p>
+    
+    <label><b>Username:</b></label>
+    <input type='text'id='strUsername'name='strUsername'>
+    <p><b class='error-Username w3-text-red'></b></p>
+    <p><b class='success-Username w3-text-green'></b></p>
+    
+    <label><b>Password:</b></label>
+    <input type='password'id='strPassword'name='strPassword'>
+    <p><b class='error-Password w3-text-red'></b></p>
+    
+    <label><b>Confirm Password:</b></label>
+    <input type='password'id='strConfirmPassword'>
+    <p><b class='error-Confirm-Password w3-text-red'></b></p>
+   </section>
+   <br>
+   <button type='button'id='submit'class='w3-button w3-block w3-blue w3-hover-indigo w3-round'>Sign in</button>
+   <br>
+  </section>
+  </form>
+  <br>
+  <section class='w3-white w3-round w3-border w3-container'>
+   <p class='w3-center'><a href='/user/in'>Do you already have an account?</a>
+  </section>
+ </article>
+</body>
+</html>

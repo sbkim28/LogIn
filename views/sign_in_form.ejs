@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<% include ../public/html/header.html %>
+<script src='/js/sign_in_form.js'></script>
+<style>
+.article{
+ width:425px;
+ position:fixed;
+ left:50%;
+ margin-left:-15em;
+}
+</style>
+</head>
+<body class='w3-light-gray w3-padding-16'>
+ <article class='article w3-padding-8'>
+  <h2 class='w3-text-black w3-center'>Sign in</h2>
+  <form>
+  <section class='w3-white w3-round w3-border w3-container'>
+   <p><b class='error w3-text-red'></b></p>
+   <a class='link'></a>
+   <section class='input'>
+    <label><b>Email:</b></label>
+    <input type='email'id='strEmail'name='strEmail'>
+    <label><b>Password:</b></label>
+    <input type='password'id='strPassword'name='strPassword'>
+   </section>
+   <br>
+   <button type='button'id='submit'class='w3-button w3-block w3-green w3-hover-teal w3-round'>Sign in</button>
+   <br>
+  </section>
+  </form>
+  <br>
+  <section class='w3-white w3-round w3-border w3-container'>
+   <p class='w3-center'><a href='/user/find'>Forgot Password?</a>/<a href='/user/new'>Don't you have an account?</a>
+  </section>
+ </article>
+</body>
+</html>

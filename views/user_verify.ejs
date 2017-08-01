@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<% include ../public/html/header.html %>
+<script src='/js/user_verify.js'></script>
+<style>
+.article{
+ width:425px;
+ position:fixed;
+ left:50%;
+ margin-left:-15em;
+}
+</style>
+</head>
+<body class='w3-light-gray w3-padding-16'>
+ <article class='article w3-padding-8'>
+  <h2 class='w3-text-black w3-center'>Verify your Account</h2>
+  <section class='w3-white w3-round w3-border w3-container'>
+   <p><b class='error w3-text-red'></b></p>
+   <p><b class='success w3-text-green'></b></p>
+   <br>
+   <button type='button'id='transport'class='w3-button w3-block w3-purple w3-hover-deep-purple w3-round'>Send Email</button>
+   <p>After receiving verify email, click a button to verify your account.
+   <p>Link is available only for 5 minutes.
+   <br>
+  </section>
+ </article>
+</body>
+</html>

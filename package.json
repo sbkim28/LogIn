@@ -1,0 +1,21 @@
+{
+  "name": "loginex-03",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "crypto": "0.0.3",
+    "debug": "^2.2.0",
+    "ejs": "^2.5.7",
+    "express": "^4.14.1",
+    "express-session": "^1.15.4",
+    "mongoose": "^4.11.5",
+    "morgan": "^1.7.0",
+    "nodemailer": "^4.0.1",
+    "serve-favicon": "^2.3.2"
+  }
+}
