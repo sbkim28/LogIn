@@ -11,24 +11,20 @@ $(document).ready(function(){
 		}
 		if(object.attr('id')=='strPassword'){
 			if(object.val().length < 8){
-				object.removeClass('w3-border-green');
-				object.addClass('w3-border-red');
+				setBorderColor(object,true);
 				$('.error-Password').text('Password should be longer');
 			}else{
-				object.removeClass('w3-border-red');
-				object.addClass('w3-border-green');
+				setBorderColor(object,false);
 				$('.error-Password').text("");
 			}
 			$('#strConfirmPassword').val('');
 		}
 		if(object.attr('id')=='strConfirmPassword'){
 			if(object.val() != $('#strPassword').val()){
-				object.removeClass('w3-border-green');
-				object.addClass('w3-border-red');
+				setBorderColor(object,true);
 				$('.error-Confirm-Password').text('Passwords do not match');
 			}else{
-				object.removeClass('w3-border-red');
-				object.addClass('w3-border-green');
+				setBorderColor(object,false);
 				$('.error-Confirm-Password').text("");
 			}
 		}
@@ -37,6 +33,11 @@ $(document).ready(function(){
 		sign_up();
 	});
 });
+function setBorderColor(object,isError){
+	const removeSelector = isError ?  'w3-border-green' : 'w3-border-red',
+	      addSelector = isError ? 'w3-border-red' : 'w3-border-green';
+	object.removeClass(removeSelector).addClass(addSelector);
+}
 function sign_up(){
 	let email = $('#strEmail'),
 		username = $('#strUsername'),
@@ -109,7 +110,6 @@ function sign_up(){
 			});
 		});
 	});
-
 }
 
 function confirm(obj){
@@ -117,34 +117,30 @@ function confirm(obj){
 		success = $('.success-'+obj),
 		error = $('.error-'+obj)
 	if(object.val().length==0){
-		object.removeClass('w3-border-green');
+		setBorderColor(object,true);
 		success.text('');
-		error.text('');
+		error.text('Enter '+obj);
 		return false;
 	}
 	if(obj=='Email'&&!object.val().match(regExp)){
-		object.removeClass('w3-border-green');
-		object.addClass('w3-border-red');
+		setBorderColor(object,true);
 		success.text('');
 		error.text('Invalid Email Template');
 		return false;
 	}
 	$.post('/user/confirm/'+obj,{data:object.val()},function(r){
 		if(!r.success){
-			object.addClass('w3-border-red');
-			object.removeClass('w3-border-green');
+			setBorderColor(object,true);
 			success.text('');
 			error.text('Unexpected Error Occurred. Try it later.');
 			return false;
 		}
 		if(r.available){
-			object.addClass('w3-border-green');
-			object.removeClass('w3-border-red');
+			setBorderColor(object,false);
 			success.text('Available '+obj);
 			error.text('');
 		}else{
-			object.addClass('w3-border-red');
-			object.removeClass('w3-border-green');
+			setBorderColor(object,true);
 			success.text('');
 			error.text('This '+obj+' is Already in Use');
 		}
